@@ -1,17 +1,17 @@
 import { combineReducers } from "redux";
-import { configureStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { getAllPizzaReducre } from "./reducers/pizzaReducer";
+import { getAllPizzasReducre } from "./reducers/pizzaReducer";
 
 const finalReducer = combineReducers({
-  getAllPizzasReducer: getAllPizzaReducre,
+  getAllPizzasReducer: getAllPizzasReducre,
 });
 
-const composeEnhancers = composeWithDevTools({});
 const initialState = {};
+const composeEnhancers = composeWithDevTools({});
 
-const store = configureStore(
+const store = createStore(
   finalReducer,
   initialState,
   composeEnhancers(applyMiddleware(thunk))

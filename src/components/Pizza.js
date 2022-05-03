@@ -10,7 +10,7 @@ export default function Pizza({ pizza }) {
   const handleShow = () => setShow(true);
   return (
     <div
-      style={{ margin: "30px" }}
+      // style={{ margin: "30px" }}
       className="shadow-lg p-3 mb-5 bg-white rounded"
     >
       <div onClick={handleShow}>
